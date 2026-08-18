@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>网络测试工具箱 V9.0</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+  <div class="sidebar" id="sidebar">
+    <div class="brand">🛠️ 网络测试工具箱 <span class="ver">V9.0</span></div>
+    <nav id="nav">
+      <div class="nav-group">
+        <button class="nav-item active" data-page="dashboard"><span class="ico">🏠</span>工作台</button>
+        <button class="nav-item" data-page="health"><span class="ico">❤️</span>网络健康检查</button>
+        <button class="nav-item" data-page="ping"><span class="ico">📡</span>Ping 测试</button>
+        <button class="nav-item" data-page="traceroute"><span class="ico">🧭</span>路由追踪</button>
+        <button class="nav-item" data-page="portscan"><span class="ico">🔍</span>端口扫描</button>
+        <button class="nav-item" data-page="hosts"><span class="ico">🖥️</span>主机发现</button>
+      </div>
+      <div class="nav-group-title">检测</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="sessions"><span class="ico">🔗</span>会话数测试</button>
+        <button class="nav-item" data-page="speedtest"><span class="ico">⚡</span>外网测速</button>
+        <button class="nav-item" data-page="lanspeed"><span class="ico">↔️</span>内网(网关)测速</button>
+        <button class="nav-item" data-page="dhcp"><span class="ico">📋</span>DHCP 检测</button>
+        <button class="nav-item" data-page="ipconflict"><span class="ico">⚠️</span>IP冲突检测</button>
+      </div>
+      <div class="nav-group-title">摄像头</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="camscan"><span class="ico">📹</span>摄像头扫描</button>
+      </div>
+      <div class="nav-group-title">分析</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="packet"><span class="ico">📦</span>协议分析/抓包</button>
+        <button class="nav-item" data-page="wifi"><span class="ico">📶</span>WiFi 分析</button>
+        <button class="nav-item" data-page="logs"><span class="ico">📜</span>日志审计</button>
+      </div>
+      <div class="nav-group-title">运维</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="firewall"><span class="ico">🧱</span>防火墙配置</button>
+        <button class="nav-item" data-page="portmap"><span class="ico">🔀</span>端口映射</button>
+        <button class="nav-item" data-page="route"><span class="ico">🗺️</span>路由表</button>
+        <button class="nav-item" data-page="remote"><span class="ico">🖥️</span>远程工具</button>
+        <button class="nav-item" data-page="wol"><span class="ico">💤</span>WOL 网络唤醒</button>
+        <button class="nav-item" data-page="serial"><span class="ico">🔌</span>串口工具</button>
+        <button class="nav-item" data-page="ups"><span class="ico">🔋</span>UPS 监控</button>
+        <button class="nav-item" data-page="wifipwd"><span class="ico">📶</span>WiFi 信息</button>
+        <button class="nav-item" data-page="devcmds"><span class="ico">📖</span>运维百宝箱</button>
+        <button class="nav-item" data-page="elec"><span class="ico">⚙️</span>弱电计算</button>
+        <button class="nav-item" data-page="aichat"><span class="ico">🤖</span>AI 运维助手</button>
+      </div>
+      <div class="nav-group-title">工具</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="subnet"><span class="ico">🧮</span>子网计算</button>
+        <button class="nav-item" data-page="mac"><span class="ico">🏷️</span>IP/MAC 查询</button>
+      </div>
+      <div class="nav-group-title">关于</div>
+      <div class="nav-group">
+        <button class="nav-item" data-page="about"><span class="ico">ℹ️</span>关于和支持</button>
+      </div>
+    </nav>
+    <div class="sidebar-footer" id="clock">--:--:--</div>
+  </div>
+
+  <main class="main">
+    <header class="topbar">
+      <span class="topbar-title" id="page-title">工作台</span>
+      <div class="topbar-right">
+        <span class="net-status" id="net-status">●</span>
+        <span id="top-time"></span>
+        <button class="btn-refresh" onclick="refreshCurrent()">🔄 刷新</button>
+      </div>
+    </header>
+
+    <div class="content" id="content">
+      <div class="loading">加载中...</div>
+    </div>
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

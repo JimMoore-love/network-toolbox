@@ -1,0 +1,25 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# 抓包文件
+captures/*.pcap
+captures/*.pcapng
+captures/*.cap
+!captures/example_http.pcap
+!captures/.gitkeep
+
+# 运行日志
+*.log
+server.log
+
+# 环境变量
+.env
+.env.*
